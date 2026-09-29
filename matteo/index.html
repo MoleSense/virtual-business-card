@@ -14,9 +14,14 @@
   :root { --bg: #200234; --accent: #7764EB; --text: #ffffff; --ink: #200234; --vh: 1vh; }
   @supports (height: 1dvh) { :root { --vh: 1dvh; } }
   * { box-sizing: border-box; }
-  html, body { margin: 0; }
-  body { min-height: 100vh; min-height: 100dvh; color: var(--text);
-         background: var(--bg) url('../background.jpg') center / cover no-repeat fixed;
+  html { background: var(--bg); overscroll-behavior: none; }
+  body { margin: 0; overscroll-behavior: none; }
+  /* Background on its own fixed layer: iOS ignores background-attachment: fixed,
+     so this keeps the image still while the content scrolls over it. */
+  body::before { content: ""; position: fixed; top: 0; left: 0; z-index: -1;
+                 width: 100%; height: 100vh; height: 100lvh;
+                 background: var(--bg) url('../background.jpg') center / cover no-repeat; }
+  body { position: relative; min-height: 100vh; min-height: 100dvh; color: var(--text);
          font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
          display: flex; justify-content: center; align-items: center;
          padding: clamp(16px, calc(5.9 * var(--vh)), 50px) 24px; }
