@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nathan Bonte · MoleSense</title>
+<meta name="description" content=" at MoleSense">
+<meta name="theme-color" content="#200234">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  /* Sizes follow the design at 844px tall and shrink with the visible height,
+     so the whole card fits on screen even with browser toolbars showing. */
+  :root { --bg: #200234; --accent: #7764EB; --text: #ffffff; --ink: #200234; --vh: 1vh; }
+  @supports (height: 1dvh) { :root { --vh: 1dvh; } }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); overscroll-behavior: none; }
+  body { margin: 0; overscroll-behavior: none; }
+  /* Background on its own fixed layer: iOS ignores background-attachment: fixed,
+     so this keeps the image still while the content scrolls over it. */
+  body::before { content: ""; position: fixed; top: 0; left: 0; z-index: -1;
+                 width: 100%; height: 100vh; height: 100lvh;
+                 background: var(--bg) url('../background.jpg') center / cover no-repeat; }
+  body { position: relative; min-height: 100vh; min-height: 100dvh; color: var(--text);
+         font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         display: flex; justify-content: center; align-items: center;
+         padding: clamp(16px, calc(5.9 * var(--vh)), 50px) 24px; }
+  main { width: 100%; max-width: 342px; text-align: center; }
+  .photo { display: block; margin: 0 auto; border-radius: 50%; object-fit: cover;
+           width: clamp(88px, calc(21.3 * var(--vh)), 180px); aspect-ratio: 1; }
+  h1 { font-size: clamp(22px, calc(3.6 * var(--vh)), 30px); font-weight: 600;
+       letter-spacing: -.01em; line-height: 1.2;
+       margin: clamp(12px, calc(4.5 * var(--vh)), 38px) 0 clamp(4px, calc(1.2 * var(--vh)), 10px); }
+  .sub { font-size: clamp(15px, calc(2.1 * var(--vh)), 18px); font-weight: 300;
+         margin: 0 0 clamp(18px, calc(8.5 * var(--vh)), 72px); }
+  nav { display: flex; flex-direction: column; gap: clamp(10px, calc(3.4 * var(--vh)), 29px);
+        padding: 0 20px; }
+  a.btn { position: relative; display: flex; align-items: center; justify-content: center;
+          height: clamp(46px, calc(7.8 * var(--vh)), 66px); border-radius: 999px;
+          background: var(--accent); color: var(--ink);
+          font-size: clamp(18px, calc(2.6 * var(--vh)), 22px); font-weight: 400; text-decoration: none;
+          transition: transform .12s ease, filter .12s ease; }
+  a.btn i { position: absolute; left: 58px; top: 50%; transform: translate(-50%, -50%);
+            font-size: 1em; }
+  a.btn:hover { filter: brightness(1.08); }
+  a.btn:active { transform: scale(.97); }
+  a.btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  @media (max-width: 360px) { nav { padding: 0; } }
+</style></head>
+<body><main>
+  
+  <h1>Nathan Bonte</h1>
+  <p class="sub">MoleSense</p>
+  <nav>
+  <a class="btn" href="mailto:nathan.bonte@molesense.ch"><i class="fa-solid fa-at" aria-hidden="true"></i>Email</a>
+  <a class="btn" href="https://www.molesense.ch"><i class="fa-solid fa-earth-europe" aria-hidden="true"></i>Website</a>
+  <a class="btn" href="https://www.molesense.ch/careers"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Careers</a>
+  </nav>
+</main></body></html>
